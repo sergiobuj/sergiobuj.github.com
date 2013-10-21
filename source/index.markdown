@@ -10,7 +10,7 @@ with data and visualize it. I will use [IPyhton notebooks]().
 [Matplotlib](http://matplotlib.org) is the preferred python plotting library for
 2D figures and is a very strong open source project. I believe the best way to
 learn something is by doing. In order to learn matplotlib, without actually
-having to use for work or a publication, I will try to reproduce different
+having to use it for work or a publication, I will try to reproduce different
 charts and graphs I see.
 
  * [Exercise 0] Search terms 'cat', 'dog' and 'fish' from 2012. See it
