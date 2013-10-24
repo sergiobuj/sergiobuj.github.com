@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "learn by cloning"
+title: "Learn by Cloning"
 footer: true
 ---
 I want to learn many things and some of those are libraries and tools to work
@@ -15,3 +15,5 @@ charts and graphs I see.
 
  * [Exercise 0] Search terms 'cat', 'dog' and 'fish' from 2012. See it
 <a href='http://nbviewer.ipython.org/7076810/learning_cloning_matplotlib_0.ipynb' target='_blank'>here</a>.
+
+   1. [Exercise 1] I found a comparison graph about the most lucrative majors and this is how my clone looks like. <a href='http://nbviewer.ipython.org/7076810/learning_cloning_matplotlib_1.ipynb' target='_blank'>link</a>.
