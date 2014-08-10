@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Sergio:Botero</title><link href="http://sergiobuj.github.io/" rel="alternate"></link><link href="http://sergiobuj.github.io/feeds/blog.atom.xml" rel="self"></link><id>http://sergiobuj.github.io/</id><updated>2013-04-08T21:58:00-07:00</updated><entry><title>Small Victories</title><link href="http://sergiobuj.github.io/blog/2013/04/08/small-victories/" rel="alternate"></link><updated>2013-04-08T21:58:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2013-04-08:blog/2013/04/08/small-victories/</id><summary type="html">&lt;p&gt;Lately I have been working in optimizing and parallelizing the ClusterPy library and at the moment, I can celebrate some 'Small Victories'.&lt;/p&gt;
+&lt;p&gt;So far I have been making small changes in places that have huge impact -functions that get called a lot and unnecessary function calling- and the timer now stops a bit earlier.&lt;/p&gt;</summary><category term="Optimizations"></category><category term="Python"></category><category term="ClusterPy"></category><category term="RiSE"></category></entry><entry><title>Opportunity in Parallelism</title><link href="http://sergiobuj.github.io/blog/2013/03/11/opportunity-in-parallelism/" rel="alternate"></link><updated>2013-03-11T20:41:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2013-03-11:blog/2013/03/11/opportunity-in-parallelism/</id><summary type="html">&lt;p&gt;Beginning this week I will be working for a period of 3 months with the people of the Research in Spatial Economics group (&lt;a href="http://www.rise-group.org/"&gt;RiSE&lt;/a&gt;) at Universidad EAFIT. They developed a library of spatially constrained clustering algorithms named &lt;a href="http://www.rise-group.org/risem/clusterpy/index.html"&gt;ClusterPy&lt;/a&gt;. I will be helping them in making some optimizations and basically, in changing a few things to make the library able to run on clusters and reduce running times.&lt;/p&gt;
+&lt;p&gt;At the moment I will start looking at the following algorithms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.rise-group.org/risem/clusterpy/clusterpy0_9_9/endogenous.html#maxp-description"&gt;max-p&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.rise-group.org/risem/clusterpy/clusterpy0_9_9/exogenous.html#azpsa-description"&gt;AZP SA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.rise-group.org/risem/clusterpy/clusterpy0_9_9/exogenous.html#azpt-description"&gt;AZPtabu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This work has a huge impact since the library is currently being used by many people and the algorithms have already started many discussions in the topic. I hope I can make a good contribution to the project.&lt;/p&gt;</summary><category term="Parallelism"></category><category term="RiSE"></category><category term="Python"></category><category term="ClusterPY"></category></entry><entry><title>Studying with MOOCs</title><link href="http://sergiobuj.github.io/blog/2013/02/12/studying-with-moocs/" rel="alternate"></link><updated>2013-02-12T17:03:00-08:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2013-02-12:blog/2013/02/12/studying-with-moocs/</id><summary type="html">&lt;p&gt;Looking forward to studying a Master's in Computer Science (I am still waiting to be admitted), I decided to start refreshing some concepts about parallel programming and theoretical computer science with two online courses from Udacity. This concept of Massive Open Online Course (MOOC) works great because you do not need to wait for the next week for another set of videos or assignments, this however, requires a lot of commitment and discipline.&lt;/p&gt;
+&lt;p&gt;Right now I am following a course called &lt;strong&gt;"Introduction to Theoretical Computer Science"&lt;/strong&gt; taught by &lt;strong&gt;Sebastian Wernicke&lt;/strong&gt;, a course that focuses on the basic concepts in Computer Science and solving tough algorithmic problems. I just started the first unit and I am really enjoying this course. I want to get quickly to the NP-Completeness and NP-Complete Units.&lt;/p&gt;
+&lt;p&gt;The other course I am taking is &lt;strong&gt;"Introduction to Parallel Programming"&lt;/strong&gt; taught by &lt;strong&gt;John Owens&lt;/strong&gt; from &lt;em&gt;&lt;strong&gt;UC Davis&lt;/strong&gt;&lt;/em&gt; (fingers crossed) and &lt;strong&gt;David Luebke&lt;/strong&gt; from &lt;strong&gt;NVIDIA&lt;/strong&gt;. This course has only uploaded up to unit 2 and I am half way through it. It has presented some interesting patterns in parallel programming using CUDA and although it took me some attempts to get the first assignment correct, CUDA seems like a very powerful tool that I think I will be studying a little more.&lt;/p&gt;
+&lt;p&gt;So far so good, I am dedicating my time mainly to the documentation of the &lt;a href="http://www.github.com/lms4labs/labmanager"&gt;Labmanager&lt;/a&gt; project that I started contributing while on my visit to the &lt;strong&gt;C.E.C.I. MIT&lt;/strong&gt; and preparing part of a publication about the use of &lt;strong&gt;IMS LTI&lt;/strong&gt; on it. Besides that I have this online courses and running whenever I can.&lt;/p&gt;</summary><category term="MOOCs"></category><category term="UC Davis"></category><category term="MIT"></category><category term="CECI"></category><category term="Labmanager"></category><category term="Parallel Programming"></category><category term="Computer Science"></category></entry><entry><title>New year, a note to self</title><link href="http://sergiobuj.github.io/blog/2013/01/08/new-year-a-note-to-self/" rel="alternate"></link><updated>2013-01-08T09:44:00-08:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2013-01-08:blog/2013/01/08/new-year-a-note-to-self/</id><summary type="html">&lt;p&gt;After being away from the project for the holidays I started again to work on it
+last week and there is something I have to remember as a note to self: "When taking
+over a project, finish the new feature first and then improve the project."&lt;/p&gt;
+&lt;p&gt;And by improving the project I mean this time I am right now where I wanted the
+source code to be well organized, a better project structure, to refactor and many
+things that will benefit the health of the project and also any future developer's
+health.&lt;/p&gt;
+&lt;p&gt;So, next time, finish the work you are supposed to do, and then contribute.&lt;/p&gt;
+&lt;p&gt;That was just a reminder to myself.&lt;/p&gt;</summary></entry><entry><title>Labmanager for Learning Management Systems</title><link href="http://sergiobuj.github.io/blog/2012/12/01/labmanager-for-learning-management-systems/" rel="alternate"></link><updated>2012-12-01T00:35:00-08:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2012-12-01:blog/2012/12/01/labmanager-for-learning-management-systems/</id><summary type="html">&lt;p&gt;Since October 2012 I have been visiting the &lt;strong&gt;CECI&lt;/strong&gt; Lab at the &lt;strong&gt;MIT&lt;/strong&gt; and contributing to a project to allow single sign-on between learning management systems (Moodle, Sakai, dotLRN, etc) and remote laboratories management systems.
+This will provide access to remote laboratories and other activities to students while they are in their school's system.&lt;/p&gt;
+&lt;p&gt;When I started with the project, a beta version was already developed and used a combination of SCORM package + LMS custom modules (modules or blocks depending on the LMS) to get the authorization and communication.&lt;/p&gt;
+&lt;p&gt;At the moment I am implementing this Labmanager to be able to provide tools that conform to the Learning Tool Interoperability standard from &lt;a href="http://www.imsglobal.org"&gt;IMS Global&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The code for the project is on &lt;a href="http://github.com/lms4labs"&gt;Github&lt;/a&gt;. It is a web application using Python and the Micro-framework Flask.&lt;/p&gt;</summary><category term="CECI"></category><category term="Flask"></category><category term="IMS"></category><category term="Labmanager"></category><category term="LMS"></category><category term="MIT"></category><category term="Moodle"></category><category term="Python"></category></entry><entry><title>Rosalind: Learning Bioinformatics</title><link href="http://sergiobuj.github.io/blog/2012/11/20/rosalind-learning-bioinformatics/" rel="alternate"></link><updated>2012-11-20T20:56:00-08:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2012-11-20:blog/2012/11/20/rosalind-learning-bioinformatics/</id><summary type="html">&lt;p&gt;&lt;a href="http://rosalind.info"&gt;Rosalind.info&lt;/a&gt; is a great project to learn Bioinformatics by solving programming challenges. The system is similar to the one you would find in the &lt;a href="http://code.google.com/codejam"&gt;Google Code Jam&lt;/a&gt; in which you are given a problem and a sample input and output. When you think you have solved the problem, you are given a dataset to solve and you give the answer.&lt;/p&gt;
+&lt;p&gt;What makes Rosalind special to me is that I came across it a while after enabling  a &lt;a href="http://www.rocksclusters.org/"&gt;Rocks cluster&lt;/a&gt; at the university to run Bioinformatics problems using the &lt;a href="http://www.rocksclusters.org/roll-documentation/bio/"&gt;Rocks bio roll&lt;/a&gt;. I never quite understood the kind of problems that it solved, what they mean and what the symbols represent. Rosalind is great in that sense, since it gives you the opportunity to just go straight to the coding part but also offers a brief background on the purpose of the algorithm you will have to implement.&lt;/p&gt;
+&lt;p&gt;I have solved only a few challenges, and due to a project that I am updating at the moment, I decided to solve the challenges using Python.&lt;/p&gt;
+&lt;p&gt;The code is on &lt;a href="https://github.com/sergiobuj/rosalind"&gt;Github/sergiobuj/rosalind&lt;/a&gt; and the progress on the challenges is on &lt;a href="http://rosalind.info/users/sergiobuj/"&gt;Rosalind/sergiobuj&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you would like to learn about Bioinformatics and you enjoy programming, you should definitely go to Rosalind and check it out.&lt;/p&gt;</summary><category term="coding"></category><category term="Bioinformatics"></category><category term="python"></category><category term="learning"></category></entry><entry><title>The Elements of Style</title><link href="http://sergiobuj.github.io/blog/2012/01/17/the-elements-of-style/" rel="alternate"></link><updated>2012-01-17T17:02:00-08:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2012-01-17:blog/2012/01/17/the-elements-of-style/</id><summary type="html">&lt;p&gt;In this post I would like to thank &lt;a href="https://github.com/nhocki"&gt;Hock&lt;/a&gt; (&lt;a href="https://twitter.com/nhocki"&gt;nhocki&lt;/a&gt; on twitter) for a great gift. A gift that will teach me a lot about writing and that will, with no doubt, make a good writer out of me (hopefuly).
+The gift was a book from William Strunk Jr. and E.B. White and it is called &lt;a href="http://www.amazon.com/Elements-Style-4th-William-Strunk/dp/0205313426/ref=sr_1_1?ie=UTF8&amp;amp;qid=1326839018&amp;amp;sr=8-1"&gt;The Elements of Style&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="The Elements of Style cover from amazon.com" src="http://ecx.images-amazon.com/images/I/51yQb9-P84L._SS400_.jpg" title="Cover image from Amazon.com" /&gt;&lt;/p&gt;
+&lt;p&gt;The only thing left to say is that I intend to write each post better than the previous (in terms of style, grammar, sense, vocabulary and structure) and that any comments about it are very welcome.&lt;/p&gt;
+&lt;p&gt;Sergio B.&lt;/p&gt;
+&lt;p&gt;(Took me about 38 minutes to get this post done, count the markdown refresher there)&lt;/p&gt;</summary><category term="The Elements of Style"></category><category term="Writing"></category><category term="William Strunk Jr."></category><category term="E.B. White"></category></entry><entry><title>Hubzero Submit Installation</title><link href="http://sergiobuj.github.io/blog/2011/11/01/hubzero-submit-installation/" rel="alternate"></link><updated>2011-11-01T16:45:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2011-11-01:blog/2011/11/01/hubzero-submit-installation/</id><summary type="html">&lt;p&gt;There are two machines/locations involved in the installation. The hub as &lt;strong&gt;HUB&lt;/strong&gt; and the cluster controller as &lt;strong&gt;CLUSTER&lt;/strong&gt;.
+Through this installation the &lt;strong&gt;$HOME&lt;/strong&gt; directory on &lt;strong&gt;CLUSTER&lt;/strong&gt; will refer to the home directory of the user that will be used to submit the jobs to the cluster (for most purposes would be any user other than root).&lt;/p&gt;
+&lt;h1&gt;INSTALLATION&lt;/h1&gt;
+&lt;h2&gt;HUB&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;hubzero&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;
+&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;hubzero&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;
+&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;hubzero&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;distributor&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h1&gt;MOVING FILES AROUND&lt;/h1&gt;
+&lt;p&gt;Files can be easily transfered between &lt;em&gt;HUB&lt;/em&gt; and &lt;em&gt;CLUSTER&lt;/em&gt; using the &lt;code&gt;scp&lt;/code&gt; command.&lt;/p&gt;
+&lt;h2&gt;HUB&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;cd&lt;/code&gt; to the submit directory (&lt;code&gt;/opt/submit&lt;/code&gt; by default) and add the public key found in &lt;code&gt;ssh/submit_rsa.pem&lt;/code&gt; to the authorized keys file on &lt;em&gt;CLUSTER&lt;/em&gt; &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/.ssh/authorized_keys&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;CLUSTER:&lt;/h2&gt;
+&lt;p&gt;Create directories &lt;code&gt;submit&lt;/code&gt;, &lt;code&gt;log&lt;/code&gt;, &lt;code&gt;bin&lt;/code&gt; and &lt;code&gt;scratch&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;scratch&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;HUB:&lt;/h2&gt;
+&lt;p&gt;Copy the scripts needed for the Batch System that is going to be used from &lt;code&gt;BatchMonitors/&amp;lt;YOUR BATCH SYSTEM&amp;gt;&lt;/code&gt; directory to &lt;em&gt;CLUSTER&lt;/em&gt; &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/submit&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Copy file &lt;code&gt;LogMessage.py&lt;/code&gt; to &lt;em&gt;CLUSTER&lt;/em&gt; &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/submit&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Copy files from the &lt;code&gt;Scripts/&amp;lt;YOUR BATCH SYSTEM&amp;gt;&lt;/code&gt; directory to &lt;em&gt;CLUSTER&lt;/em&gt; &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/bin&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In case it exists, remove file &lt;code&gt;/etc/submit/config&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;CLUSTER:&lt;/h2&gt;
+&lt;p&gt;Make sure the files in &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/bin&lt;/code&gt; are executable, this can simply be done using:
+&lt;code&gt;$ chmod +x $HOME/bin/*&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;HUB:&lt;/h2&gt;
+&lt;p&gt;Check the ownership of the file &lt;code&gt;monitorJobDB&lt;/code&gt;, it should belong to &lt;code&gt;gridman&lt;/code&gt; and group &lt;code&gt;gridman&lt;/code&gt;.
+To change it simply &lt;code&gt;# chown gridman.gridman monitorJobDB&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;visudo&lt;/code&gt; to give permissions over the &lt;code&gt;bin/update_known_hosts&lt;/code&gt; file adding this entry:
+&lt;code&gt;ALL ALL=NOPASSWD:/opt/submit/bin/update-known-hosts&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The path should be changed in case that the installation was made on a different directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h1&gt;FILL IN CONFIGURATION FILES&lt;/h1&gt;
+&lt;h2&gt;HUB:&lt;/h2&gt;
+&lt;p&gt;Add information to &lt;code&gt;sites.dat&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;[venue_name]&lt;/span&gt;
+&lt;span class="na"&gt;venues&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;comma separated list of venues&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;remoteBatchSystem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;PBS or CONDOR or...&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;remotePpn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;Has to be specified, if unknown set to 1&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;checkProbeResult&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;false&lt;/span&gt;
+&lt;span class="na"&gt;remoteScratchDirectory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;path on CLUSTER $HOME/scratch&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;siteMonitorDesignator&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;monitor_name&lt;/span&gt;
+&lt;span class="na"&gt;venueMechanism&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;ssh or local&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;remoteUser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;username on the CLUSTER&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Add information to &lt;code&gt;monitors.dat&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;[monitor_name]&lt;/span&gt;
+&lt;span class="na"&gt;venue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;venue_name&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;remoteUser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;username on the CLUSTER&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;venueMechanism&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;ssh or local&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;remoteMonitorCommand&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;path on CLUSTER $HOME/submit/MONITOR-SCRIPT&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Where &lt;code&gt;MONITOR-SCRIPT&lt;/code&gt; should be changed to match the script according to your Batch System.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h1&gt;EDIT FILES&lt;/h1&gt;
+&lt;h2&gt;HUB:&lt;/h2&gt;
+&lt;p&gt;Edit file &lt;code&gt;/etc/hubzero/maxwell.conf&lt;/code&gt; and add the lines following lines (3) before the hub information.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;visualization_params&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="s2"&gt;submit_target tcp://&amp;lt;SUBMIT_SERVER_LOCATION&amp;gt;:830&lt;/span&gt;
+&lt;span class="s2"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;CLUSTER:&lt;/h2&gt;
+&lt;p&gt;Edit the monitor file on &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/submit/MONITOR-SCRIPT&lt;/code&gt; to set this variables.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SITEDESIGNATOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;monitor_name&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;Same&lt;/span&gt; &lt;span class="n"&gt;as&lt;/span&gt; &lt;span class="n"&gt;HUB&lt;/span&gt; &lt;span class="n"&gt;monitors&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dat&lt;/span&gt;
+&lt;span class="n"&gt;MONITORROOT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Adjust&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="n"&gt;MONITORLOGLOCATION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Adjust&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are using CONDOR and the executables are already in the user PATH set this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;CONDOR_ROOT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;CONDOR_CONFIG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h1&gt;DONE!&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;HUB:&lt;/em&gt; Start or Restart &lt;code&gt;submon&lt;/code&gt; and &lt;code&gt;submit-server&lt;/code&gt; daemons.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# /etc/init.d/submit-server start&lt;/span&gt;
+&lt;span class="c"&gt;# /etc/init.d/submon start&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="batch system"></category><category term="condor"></category><category term="instalacion"></category><category term="python"></category><category term="submit"></category></entry><entry><title>For the next 2.5 months</title><link href="http://sergiobuj.github.io/blog/2011/08/08/for-the-next-25-months/" rel="alternate"></link><updated>2011-08-08T17:10:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2011-08-08:blog/2011/08/08/for-the-next-25-months/</id><summary type="html">&lt;p&gt;The Purdue University (IN, US) is working closely with EAFIT University (ANT, CO) on a project to set up a supercomputer on EAFIT and be able to support some of the current scientific research in Colombia by providing the computational capabilities needed to process large sets of data and the creation and visualization of simulations.&lt;/p&gt;
+&lt;p&gt;From October 5th 2011 until December 13th 2011, West Lafayette will be my home. Where I will be learning about the internals of the &lt;a href="http://www.hubzero.org"&gt;Hubzero platform&lt;/a&gt;, and how to replicate the success it's had.&lt;/p&gt;
+&lt;p&gt;More about the trip and stuff.&lt;/p&gt;</summary><category term="EAFIT"></category><category term="HPC"></category><category term="Hubzero"></category><category term="Nanohub"></category><category term="Purdue"></category></entry></feed>

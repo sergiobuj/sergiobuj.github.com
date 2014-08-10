@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Sergio:Botero</title><link href="http://sergiobuj.github.io/" rel="alternate"></link><link href="http://sergiobuj.github.io/feeds/all.atom.xml" rel="self"></link><id>http://sergiobuj.github.io/</id><updated>2014-07-27T10:40:00-07:00</updated><entry><title>Coding exercises</title><link href="http://sergiobuj.github.io/coding-exercises/2014/07/27/coding-exercises/" rel="alternate"></link><updated>2014-07-27T10:40:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2014-07-27:coding-exercises/2014/07/27/coding-exercises/</id><summary type="html">
+  &lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Motivation"&gt;Motivation&lt;a class="anchor-link" href="#Motivation"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Working on the programming problems from &lt;a href="https://rosalind.org"&gt;Rosalind&lt;/a&gt; I decided to present some of the algorithms I used to solve some of them.&lt;/p&gt;
+&lt;p&gt;I will try to present the algorithm/code as a way to solve a general problem and not the actual problem because I don't want to spoil the fun for others.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Graphs"&gt;Graphs&lt;a class="anchor-link" href="#Graphs"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[1]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# For all the following graph algorithms I will use the dictionary with integers as keys and sets as values.&lt;/span&gt;
+&lt;span class="n"&gt;graph&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
+    &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
+    &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([])&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="c"&gt;#This Graph is just:&lt;/span&gt;
+&lt;span class="c"&gt;# 0 -&amp;gt; 1 -&amp;gt; 2&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;I will also try to use &lt;a href="http://networkx.github.io/"&gt;Networkx&lt;/a&gt; to give a visual representation.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="tarjanscc.html"&gt;Strongly Connected Components in a graph&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Comments? let me know on &lt;a href="https://twitter.com/sergiobuj"&gt;@sergiobuj&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</summary><category term="Code"></category><category term="Rosalind"></category><category term="Algorithms"></category><category term="IPython notebook"></category></entry><entry><title>Using Tarjan's Algorithm</title><link href="http://sergiobuj.github.io/coding-exercises/2014/07/27/using-tarjans-algorithm/" rel="alternate"></link><updated>2014-07-27T10:39:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2014-07-27:coding-exercises/2014/07/27/using-tarjans-algorithm/</id><summary type="html">
+  &lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Strongly-Connected-Components-with-Tarjan's-Algorithm"&gt;Strongly Connected Components with Tarjan's Algorithm&lt;a class="anchor-link" href="#Strongly-Connected-Components-with-Tarjan's-Algorithm"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;When we deal with Directed Graphs we will sometimes find a Strongly Conected Graph. Such graph has a path between every pair of nodes (vertexes) in the graph going on both directions.&lt;/p&gt;
+&lt;p&gt;When we refer to Strongly Connected Components in a graph, we speak about a group of nodes in the graph that satisfies this condition.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Strongly_connected_component"&gt;Wikipedia&lt;/a&gt; is a good place to find more about it.&lt;/p&gt;
+&lt;p&gt;In order to get the Strongly Conected Components I will use a Python implementation of &lt;a href="http://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm"&gt;Tarjan's Algorithm&lt;/a&gt;. The implementation is practically a straightforward translation of the pseudocode shown on the page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[1]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;graph&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
+    &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
+    &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
+    &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
+    &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
+    &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([])&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[2]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Using networkx I will draw a simple graph for demonstration purposes.&lt;/span&gt;
+&lt;span class="c"&gt;# Note: I am starting with networkx, sure there are better ways to create a Directed Graph. This is one.&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;networkx&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;nx&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;nx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DiGraph&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;edges&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;graph&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;edge&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;edges&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_edge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;edge&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;nx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;spring_layout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;nx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;draw_networkx_nodes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;nx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;draw_networkx_edges&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arrows&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;nx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;draw_networkx_labels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;off&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,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
+IPgBAHjm/wDac2V8/E+9kAAAAABJRU5ErkJggg==
+"&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The wider end on the adges represent an arrow, indicatin the direction of the relation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[3]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;tarjan&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;graph&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="c"&gt;#input: graph G = (V, E)&lt;/span&gt;
+    &lt;span class="c"&gt;#output: Array of strongly connected components (sets of vertices)&lt;/span&gt;
+    &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;graph&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;sccs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+    &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;indexes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;
+    &lt;span class="n"&gt;lows&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Inf&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;
+    &lt;span class="n"&gt;S&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;strongconnect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="c"&gt;# Set the depth index for v to the smallest unused index&lt;/span&gt;
+        &lt;span class="n"&gt;indexes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;lows&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+        &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="c"&gt;# Consider successors of v&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;chld&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;graph&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;indexes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;chld&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="c"&gt;# Successor chld has not yet been visited; recurse on it&lt;/span&gt;
+                &lt;span class="n"&gt;strongconnect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;chld&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                &lt;span class="n"&gt;lows&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lows&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;lows&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;chld&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+            &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;chld&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="c"&gt;# Successor w is in stack S and hence in the current SCC&lt;/span&gt;
+                &lt;span class="n"&gt;lows&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lows&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;lows&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;chld&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+        &lt;span class="c"&gt;# If v is a root node, pop the stack and generate an SCC&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;lows&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;indexes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+            &lt;span class="n"&gt;scc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+            &lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+            &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="n"&gt;scc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                &lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+            &lt;span class="n"&gt;sccs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;graph&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;indexes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;strongconnect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sccs&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[4]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;scc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tarjan&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;graph&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;scc&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
+    Out[4]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_pyout"&gt;
+&lt;pre&gt;
+[{0, 1, 3}, {5}, {2, 4}]
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[5]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;colors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;g&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;b&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;component&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;zip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;colors&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;nx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;draw_networkx_nodes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;nodelist&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;component&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;node_color&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;nx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;draw_networkx_edges&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arrows&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;nx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;draw_networkx_labels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;off&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,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
+"&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;This algorithm besides being good for a problem that required just an implementation was very useful in the case where I needed to 'reduce' a graph into a simpler representation (without cycles and extra edges).&lt;/p&gt;
+&lt;p&gt;Any comments? Let me know on &lt;a href="https://twitter.com/sergiobuj"&gt;@sergiobuj&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</summary><category term="Code"></category><category term="Rosalind"></category><category term="Algorithms"></category><category term="IPython notebook"></category><category term="Tarjan"></category><category term="Strongly Connected Components"></category></entry><entry><title>Learn by Cloning</title><link href="http://sergiobuj.github.io/learn-by-cloning/2013/10/27/learn-by-cloning/" rel="alternate"></link><updated>2013-10-27T00:00:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2013-10-27:learn-by-cloning/2013/10/27/learn-by-cloning/</id><summary type="html">&lt;p&gt;I want to learn many things and some of those are libraries and tools to work
+with data and visualize it. I will use &lt;a href='http://ipython.org/notebook.html' target='_blank'&gt;IPyhton notebooks&lt;/a&gt;.&lt;/p&gt;
+&lt;h5&gt;Cloning to learn matplotlib&lt;/h5&gt;
+&lt;p&gt;&lt;a href='http://matplotlib.org' target='_blank'&gt;Matplotlib&lt;/a&gt; is the preferred python plotting library for
+2D figures and is a very strong open source project. I believe the best way to
+learn something is by doing. In order to learn matplotlib, without actually
+having to use it for work or a publication, I will try to reproduce different
+charts and graphs I see.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;[Exercise 0] Search terms 'cat', 'dog' and 'fish' from 2012. See it
+&lt;a href='http://nbviewer.ipython.org/7076810/learning_cloning_matplotlib_0.ipynb' target='_blank'&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Exercise 1] I found a comparison graph about the most lucrative majors and this is how my clone looks like. &lt;a href='http://nbviewer.ipython.org/7076810/learning_cloning_matplotlib_1.ipynb' target='_blank'&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;[Exercise 2] I somehow failed to clone a graph that shows some data about Software Sales from Apple. The topic comes from the news since Apple made available the latest OS X for free. &lt;a href='http://nbviewer.ipython.org/7076810/learning_cloning_matplotlib_2.ipynb' target='_blank'&gt;Attempt here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[Exercise 3] Simple plot for tablet OS market share. Missing the gradient. &lt;a href='http://nbviewer.ipython.org/7076810/learning_cloning_matplotlib_3.ipynb' target='_blank'&gt;Link here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><title>Small Victories</title><link href="http://sergiobuj.github.io/blog/2013/04/08/small-victories/" rel="alternate"></link><updated>2013-04-08T21:58:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2013-04-08:blog/2013/04/08/small-victories/</id><summary type="html">&lt;p&gt;Lately I have been working in optimizing and parallelizing the ClusterPy library and at the moment, I can celebrate some 'Small Victories'.&lt;/p&gt;
+&lt;p&gt;So far I have been making small changes in places that have huge impact -functions that get called a lot and unnecessary function calling- and the timer now stops a bit earlier.&lt;/p&gt;</summary><category term="Optimizations"></category><category term="Python"></category><category term="ClusterPy"></category><category term="RiSE"></category></entry><entry><title>Opportunity in Parallelism</title><link href="http://sergiobuj.github.io/blog/2013/03/11/opportunity-in-parallelism/" rel="alternate"></link><updated>2013-03-11T20:41:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2013-03-11:blog/2013/03/11/opportunity-in-parallelism/</id><summary type="html">&lt;p&gt;Beginning this week I will be working for a period of 3 months with the people of the Research in Spatial Economics group (&lt;a href="http://www.rise-group.org/"&gt;RiSE&lt;/a&gt;) at Universidad EAFIT. They developed a library of spatially constrained clustering algorithms named &lt;a href="http://www.rise-group.org/risem/clusterpy/index.html"&gt;ClusterPy&lt;/a&gt;. I will be helping them in making some optimizations and basically, in changing a few things to make the library able to run on clusters and reduce running times.&lt;/p&gt;
+&lt;p&gt;At the moment I will start looking at the following algorithms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.rise-group.org/risem/clusterpy/clusterpy0_9_9/endogenous.html#maxp-description"&gt;max-p&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.rise-group.org/risem/clusterpy/clusterpy0_9_9/exogenous.html#azpsa-description"&gt;AZP SA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.rise-group.org/risem/clusterpy/clusterpy0_9_9/exogenous.html#azpt-description"&gt;AZPtabu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This work has a huge impact since the library is currently being used by many people and the algorithms have already started many discussions in the topic. I hope I can make a good contribution to the project.&lt;/p&gt;</summary><category term="Parallelism"></category><category term="RiSE"></category><category term="Python"></category><category term="ClusterPY"></category></entry><entry><title>Studying with MOOCs</title><link href="http://sergiobuj.github.io/blog/2013/02/12/studying-with-moocs/" rel="alternate"></link><updated>2013-02-12T17:03:00-08:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2013-02-12:blog/2013/02/12/studying-with-moocs/</id><summary type="html">&lt;p&gt;Looking forward to studying a Master's in Computer Science (I am still waiting to be admitted), I decided to start refreshing some concepts about parallel programming and theoretical computer science with two online courses from Udacity. This concept of Massive Open Online Course (MOOC) works great because you do not need to wait for the next week for another set of videos or assignments, this however, requires a lot of commitment and discipline.&lt;/p&gt;
+&lt;p&gt;Right now I am following a course called &lt;strong&gt;"Introduction to Theoretical Computer Science"&lt;/strong&gt; taught by &lt;strong&gt;Sebastian Wernicke&lt;/strong&gt;, a course that focuses on the basic concepts in Computer Science and solving tough algorithmic problems. I just started the first unit and I am really enjoying this course. I want to get quickly to the NP-Completeness and NP-Complete Units.&lt;/p&gt;
+&lt;p&gt;The other course I am taking is &lt;strong&gt;"Introduction to Parallel Programming"&lt;/strong&gt; taught by &lt;strong&gt;John Owens&lt;/strong&gt; from &lt;em&gt;&lt;strong&gt;UC Davis&lt;/strong&gt;&lt;/em&gt; (fingers crossed) and &lt;strong&gt;David Luebke&lt;/strong&gt; from &lt;strong&gt;NVIDIA&lt;/strong&gt;. This course has only uploaded up to unit 2 and I am half way through it. It has presented some interesting patterns in parallel programming using CUDA and although it took me some attempts to get the first assignment correct, CUDA seems like a very powerful tool that I think I will be studying a little more.&lt;/p&gt;
+&lt;p&gt;So far so good, I am dedicating my time mainly to the documentation of the &lt;a href="http://www.github.com/lms4labs/labmanager"&gt;Labmanager&lt;/a&gt; project that I started contributing while on my visit to the &lt;strong&gt;C.E.C.I. MIT&lt;/strong&gt; and preparing part of a publication about the use of &lt;strong&gt;IMS LTI&lt;/strong&gt; on it. Besides that I have this online courses and running whenever I can.&lt;/p&gt;</summary><category term="MOOCs"></category><category term="UC Davis"></category><category term="MIT"></category><category term="CECI"></category><category term="Labmanager"></category><category term="Parallel Programming"></category><category term="Computer Science"></category></entry><entry><title>New year, a note to self</title><link href="http://sergiobuj.github.io/blog/2013/01/08/new-year-a-note-to-self/" rel="alternate"></link><updated>2013-01-08T09:44:00-08:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2013-01-08:blog/2013/01/08/new-year-a-note-to-self/</id><summary type="html">&lt;p&gt;After being away from the project for the holidays I started again to work on it
+last week and there is something I have to remember as a note to self: "When taking
+over a project, finish the new feature first and then improve the project."&lt;/p&gt;
+&lt;p&gt;And by improving the project I mean this time I am right now where I wanted the
+source code to be well organized, a better project structure, to refactor and many
+things that will benefit the health of the project and also any future developer's
+health.&lt;/p&gt;
+&lt;p&gt;So, next time, finish the work you are supposed to do, and then contribute.&lt;/p&gt;
+&lt;p&gt;That was just a reminder to myself.&lt;/p&gt;</summary></entry><entry><title>Labmanager for Learning Management Systems</title><link href="http://sergiobuj.github.io/blog/2012/12/01/labmanager-for-learning-management-systems/" rel="alternate"></link><updated>2012-12-01T00:35:00-08:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2012-12-01:blog/2012/12/01/labmanager-for-learning-management-systems/</id><summary type="html">&lt;p&gt;Since October 2012 I have been visiting the &lt;strong&gt;CECI&lt;/strong&gt; Lab at the &lt;strong&gt;MIT&lt;/strong&gt; and contributing to a project to allow single sign-on between learning management systems (Moodle, Sakai, dotLRN, etc) and remote laboratories management systems.
+This will provide access to remote laboratories and other activities to students while they are in their school's system.&lt;/p&gt;
+&lt;p&gt;When I started with the project, a beta version was already developed and used a combination of SCORM package + LMS custom modules (modules or blocks depending on the LMS) to get the authorization and communication.&lt;/p&gt;
+&lt;p&gt;At the moment I am implementing this Labmanager to be able to provide tools that conform to the Learning Tool Interoperability standard from &lt;a href="http://www.imsglobal.org"&gt;IMS Global&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The code for the project is on &lt;a href="http://github.com/lms4labs"&gt;Github&lt;/a&gt;. It is a web application using Python and the Micro-framework Flask.&lt;/p&gt;</summary><category term="CECI"></category><category term="Flask"></category><category term="IMS"></category><category term="Labmanager"></category><category term="LMS"></category><category term="MIT"></category><category term="Moodle"></category><category term="Python"></category></entry><entry><title>Rosalind: Learning Bioinformatics</title><link href="http://sergiobuj.github.io/blog/2012/11/20/rosalind-learning-bioinformatics/" rel="alternate"></link><updated>2012-11-20T20:56:00-08:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2012-11-20:blog/2012/11/20/rosalind-learning-bioinformatics/</id><summary type="html">&lt;p&gt;&lt;a href="http://rosalind.info"&gt;Rosalind.info&lt;/a&gt; is a great project to learn Bioinformatics by solving programming challenges. The system is similar to the one you would find in the &lt;a href="http://code.google.com/codejam"&gt;Google Code Jam&lt;/a&gt; in which you are given a problem and a sample input and output. When you think you have solved the problem, you are given a dataset to solve and you give the answer.&lt;/p&gt;
+&lt;p&gt;What makes Rosalind special to me is that I came across it a while after enabling  a &lt;a href="http://www.rocksclusters.org/"&gt;Rocks cluster&lt;/a&gt; at the university to run Bioinformatics problems using the &lt;a href="http://www.rocksclusters.org/roll-documentation/bio/"&gt;Rocks bio roll&lt;/a&gt;. I never quite understood the kind of problems that it solved, what they mean and what the symbols represent. Rosalind is great in that sense, since it gives you the opportunity to just go straight to the coding part but also offers a brief background on the purpose of the algorithm you will have to implement.&lt;/p&gt;
+&lt;p&gt;I have solved only a few challenges, and due to a project that I am updating at the moment, I decided to solve the challenges using Python.&lt;/p&gt;
+&lt;p&gt;The code is on &lt;a href="https://github.com/sergiobuj/rosalind"&gt;Github/sergiobuj/rosalind&lt;/a&gt; and the progress on the challenges is on &lt;a href="http://rosalind.info/users/sergiobuj/"&gt;Rosalind/sergiobuj&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you would like to learn about Bioinformatics and you enjoy programming, you should definitely go to Rosalind and check it out.&lt;/p&gt;</summary><category term="coding"></category><category term="Bioinformatics"></category><category term="python"></category><category term="learning"></category></entry><entry><title>The Elements of Style</title><link href="http://sergiobuj.github.io/blog/2012/01/17/the-elements-of-style/" rel="alternate"></link><updated>2012-01-17T17:02:00-08:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2012-01-17:blog/2012/01/17/the-elements-of-style/</id><summary type="html">&lt;p&gt;In this post I would like to thank &lt;a href="https://github.com/nhocki"&gt;Hock&lt;/a&gt; (&lt;a href="https://twitter.com/nhocki"&gt;nhocki&lt;/a&gt; on twitter) for a great gift. A gift that will teach me a lot about writing and that will, with no doubt, make a good writer out of me (hopefuly).
+The gift was a book from William Strunk Jr. and E.B. White and it is called &lt;a href="http://www.amazon.com/Elements-Style-4th-William-Strunk/dp/0205313426/ref=sr_1_1?ie=UTF8&amp;amp;qid=1326839018&amp;amp;sr=8-1"&gt;The Elements of Style&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="The Elements of Style cover from amazon.com" src="http://ecx.images-amazon.com/images/I/51yQb9-P84L._SS400_.jpg" title="Cover image from Amazon.com" /&gt;&lt;/p&gt;
+&lt;p&gt;The only thing left to say is that I intend to write each post better than the previous (in terms of style, grammar, sense, vocabulary and structure) and that any comments about it are very welcome.&lt;/p&gt;
+&lt;p&gt;Sergio B.&lt;/p&gt;
+&lt;p&gt;(Took me about 38 minutes to get this post done, count the markdown refresher there)&lt;/p&gt;</summary><category term="The Elements of Style"></category><category term="Writing"></category><category term="William Strunk Jr."></category><category term="E.B. White"></category></entry><entry><title>Hubzero Submit Installation</title><link href="http://sergiobuj.github.io/blog/2011/11/01/hubzero-submit-installation/" rel="alternate"></link><updated>2011-11-01T16:45:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2011-11-01:blog/2011/11/01/hubzero-submit-installation/</id><summary type="html">&lt;p&gt;There are two machines/locations involved in the installation. The hub as &lt;strong&gt;HUB&lt;/strong&gt; and the cluster controller as &lt;strong&gt;CLUSTER&lt;/strong&gt;.
+Through this installation the &lt;strong&gt;$HOME&lt;/strong&gt; directory on &lt;strong&gt;CLUSTER&lt;/strong&gt; will refer to the home directory of the user that will be used to submit the jobs to the cluster (for most purposes would be any user other than root).&lt;/p&gt;
+&lt;h1&gt;INSTALLATION&lt;/h1&gt;
+&lt;h2&gt;HUB&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;hubzero&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;
+&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;hubzero&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;
+&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;hubzero&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;distributor&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h1&gt;MOVING FILES AROUND&lt;/h1&gt;
+&lt;p&gt;Files can be easily transfered between &lt;em&gt;HUB&lt;/em&gt; and &lt;em&gt;CLUSTER&lt;/em&gt; using the &lt;code&gt;scp&lt;/code&gt; command.&lt;/p&gt;
+&lt;h2&gt;HUB&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;cd&lt;/code&gt; to the submit directory (&lt;code&gt;/opt/submit&lt;/code&gt; by default) and add the public key found in &lt;code&gt;ssh/submit_rsa.pem&lt;/code&gt; to the authorized keys file on &lt;em&gt;CLUSTER&lt;/em&gt; &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/.ssh/authorized_keys&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;CLUSTER:&lt;/h2&gt;
+&lt;p&gt;Create directories &lt;code&gt;submit&lt;/code&gt;, &lt;code&gt;log&lt;/code&gt;, &lt;code&gt;bin&lt;/code&gt; and &lt;code&gt;scratch&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;scratch&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;HUB:&lt;/h2&gt;
+&lt;p&gt;Copy the scripts needed for the Batch System that is going to be used from &lt;code&gt;BatchMonitors/&amp;lt;YOUR BATCH SYSTEM&amp;gt;&lt;/code&gt; directory to &lt;em&gt;CLUSTER&lt;/em&gt; &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/submit&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Copy file &lt;code&gt;LogMessage.py&lt;/code&gt; to &lt;em&gt;CLUSTER&lt;/em&gt; &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/submit&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Copy files from the &lt;code&gt;Scripts/&amp;lt;YOUR BATCH SYSTEM&amp;gt;&lt;/code&gt; directory to &lt;em&gt;CLUSTER&lt;/em&gt; &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/bin&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In case it exists, remove file &lt;code&gt;/etc/submit/config&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;CLUSTER:&lt;/h2&gt;
+&lt;p&gt;Make sure the files in &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/bin&lt;/code&gt; are executable, this can simply be done using:
+&lt;code&gt;$ chmod +x $HOME/bin/*&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;HUB:&lt;/h2&gt;
+&lt;p&gt;Check the ownership of the file &lt;code&gt;monitorJobDB&lt;/code&gt;, it should belong to &lt;code&gt;gridman&lt;/code&gt; and group &lt;code&gt;gridman&lt;/code&gt;.
+To change it simply &lt;code&gt;# chown gridman.gridman monitorJobDB&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;visudo&lt;/code&gt; to give permissions over the &lt;code&gt;bin/update_known_hosts&lt;/code&gt; file adding this entry:
+&lt;code&gt;ALL ALL=NOPASSWD:/opt/submit/bin/update-known-hosts&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The path should be changed in case that the installation was made on a different directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h1&gt;FILL IN CONFIGURATION FILES&lt;/h1&gt;
+&lt;h2&gt;HUB:&lt;/h2&gt;
+&lt;p&gt;Add information to &lt;code&gt;sites.dat&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;[venue_name]&lt;/span&gt;
+&lt;span class="na"&gt;venues&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;comma separated list of venues&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;remoteBatchSystem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;PBS or CONDOR or...&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;remotePpn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;Has to be specified, if unknown set to 1&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;checkProbeResult&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;false&lt;/span&gt;
+&lt;span class="na"&gt;remoteScratchDirectory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;path on CLUSTER $HOME/scratch&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;siteMonitorDesignator&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;monitor_name&lt;/span&gt;
+&lt;span class="na"&gt;venueMechanism&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;ssh or local&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;remoteUser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;username on the CLUSTER&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Add information to &lt;code&gt;monitors.dat&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;[monitor_name]&lt;/span&gt;
+&lt;span class="na"&gt;venue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;venue_name&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;remoteUser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;username on the CLUSTER&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;venueMechanism&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;ssh or local&amp;gt;&lt;/span&gt;
+&lt;span class="na"&gt;remoteMonitorCommand&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;path on CLUSTER $HOME/submit/MONITOR-SCRIPT&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Where &lt;code&gt;MONITOR-SCRIPT&lt;/code&gt; should be changed to match the script according to your Batch System.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h1&gt;EDIT FILES&lt;/h1&gt;
+&lt;h2&gt;HUB:&lt;/h2&gt;
+&lt;p&gt;Edit file &lt;code&gt;/etc/hubzero/maxwell.conf&lt;/code&gt; and add the lines following lines (3) before the hub information.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;visualization_params&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="s2"&gt;submit_target tcp://&amp;lt;SUBMIT_SERVER_LOCATION&amp;gt;:830&lt;/span&gt;
+&lt;span class="s2"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;CLUSTER:&lt;/h2&gt;
+&lt;p&gt;Edit the monitor file on &lt;em&gt;$HOME&lt;/em&gt;&lt;code&gt;/submit/MONITOR-SCRIPT&lt;/code&gt; to set this variables.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SITEDESIGNATOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;monitor_name&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;Same&lt;/span&gt; &lt;span class="n"&gt;as&lt;/span&gt; &lt;span class="n"&gt;HUB&lt;/span&gt; &lt;span class="n"&gt;monitors&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dat&lt;/span&gt;
+&lt;span class="n"&gt;MONITORROOT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Adjust&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="n"&gt;MONITORLOGLOCATION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Adjust&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are using CONDOR and the executables are already in the user PATH set this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;CONDOR_ROOT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;CONDOR_CONFIG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h1&gt;DONE!&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;HUB:&lt;/em&gt; Start or Restart &lt;code&gt;submon&lt;/code&gt; and &lt;code&gt;submit-server&lt;/code&gt; daemons.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# /etc/init.d/submit-server start&lt;/span&gt;
+&lt;span class="c"&gt;# /etc/init.d/submon start&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="batch system"></category><category term="condor"></category><category term="instalacion"></category><category term="python"></category><category term="submit"></category></entry><entry><title>For the next 2.5 months</title><link href="http://sergiobuj.github.io/blog/2011/08/08/for-the-next-25-months/" rel="alternate"></link><updated>2011-08-08T17:10:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2011-08-08:blog/2011/08/08/for-the-next-25-months/</id><summary type="html">&lt;p&gt;The Purdue University (IN, US) is working closely with EAFIT University (ANT, CO) on a project to set up a supercomputer on EAFIT and be able to support some of the current scientific research in Colombia by providing the computational capabilities needed to process large sets of data and the creation and visualization of simulations.&lt;/p&gt;
+&lt;p&gt;From October 5th 2011 until December 13th 2011, West Lafayette will be my home. Where I will be learning about the internals of the &lt;a href="http://www.hubzero.org"&gt;Hubzero platform&lt;/a&gt;, and how to replicate the success it's had.&lt;/p&gt;
+&lt;p&gt;More about the trip and stuff.&lt;/p&gt;</summary><category term="EAFIT"></category><category term="HPC"></category><category term="Hubzero"></category><category term="Nanohub"></category><category term="Purdue"></category></entry></feed>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Sergio:Botero</title><link href="http://sergiobuj.github.io/" rel="alternate"></link><link href="http://sergiobuj.github.io/feeds/learn-by-cloning.atom.xml" rel="self"></link><id>http://sergiobuj.github.io/</id><updated>2013-10-27T00:00:00-07:00</updated><entry><title>Learn by Cloning</title><link href="http://sergiobuj.github.io/learn-by-cloning/2013/10/27/learn-by-cloning/" rel="alternate"></link><updated>2013-10-27T00:00:00-07:00</updated><author><name>Sergio Botero</name></author><id>tag:sergiobuj.github.io,2013-10-27:learn-by-cloning/2013/10/27/learn-by-cloning/</id><summary type="html">&lt;p&gt;I want to learn many things and some of those are libraries and tools to work
+with data and visualize it. I will use &lt;a href='http://ipython.org/notebook.html' target='_blank'&gt;IPyhton notebooks&lt;/a&gt;.&lt;/p&gt;
+&lt;h5&gt;Cloning to learn matplotlib&lt;/h5&gt;
+&lt;p&gt;&lt;a href='http://matplotlib.org' target='_blank'&gt;Matplotlib&lt;/a&gt; is the preferred python plotting library for
+2D figures and is a very strong open source project. I believe the best way to
+learn something is by doing. In order to learn matplotlib, without actually
+having to use it for work or a publication, I will try to reproduce different
+charts and graphs I see.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;[Exercise 0] Search terms 'cat', 'dog' and 'fish' from 2012. See it
+&lt;a href='http://nbviewer.ipython.org/7076810/learning_cloning_matplotlib_0.ipynb' target='_blank'&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Exercise 1] I found a comparison graph about the most lucrative majors and this is how my clone looks like. &lt;a href='http://nbviewer.ipython.org/7076810/learning_cloning_matplotlib_1.ipynb' target='_blank'&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;[Exercise 2] I somehow failed to clone a graph that shows some data about Software Sales from Apple. The topic comes from the news since Apple made available the latest OS X for free. &lt;a href='http://nbviewer.ipython.org/7076810/learning_cloning_matplotlib_2.ipynb' target='_blank'&gt;Attempt here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[Exercise 3] Simple plot for tablet OS market share. Missing the gradient. &lt;a href='http://nbviewer.ipython.org/7076810/learning_cloning_matplotlib_3.ipynb' target='_blank'&gt;Link here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary></entry></feed>
