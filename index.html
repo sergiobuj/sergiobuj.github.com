@@ -23,88 +23,14 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://sergiobuj.github.io/blog/2014/08/10/from-octopress-to-pelican/">From Octopress to Pelican</a></h1>
+                    <h1 class="entry-title"><a href="http://sergiobuj.github.io/coding-exercises/2014/08/11/coding-exercises/">Coding exercises</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2014-08-10T22:38:00">
-                Published: Sun 10 August 2014
+        <abbr class="published" title="2014-08-11T16:06:00">
+                Published: Mon 11 August 2014
         </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://sergiobuj.github.io/author/sergio-botero.html">Sergio Botero</a>
-        </address>
-<p>In <a href="http://sergiobuj.github.io/category/blog.html">blog</a>. </p>
-<p>tags: <a href="http://sergiobuj.github.io/tag/blog.html">blog</a> <a href="http://sergiobuj.github.io/tag/octopress.html">octopress</a> <a href="http://sergiobuj.github.io/tag/pelican.html">pelican</a> </p>
-</footer><!-- /.post-info --><p>If I want to blog about something the last thing I need is the blogging
-framework getting in the way.</p>
-<p>I don't blog much, but every time I wanted to write something I had to
-basically relearn everything about my previous 'blog framework' to get
-that working.</p>
-<p>I was spending way too much time on 'not writing', making me delaying any
-idea I wanted to put up. I considered moving to <a href="http://www.tumblr.com/">tumblr</a> or something like
-it, but that was being too radical about it (also I like to feel at least
-some ownership on the process).</p>
-<p>Recently I came across a blog post from <a href="http://mathamy.com/">Amy Hanlon</a> about <a href="http://mathamy.com/migrating-to-github-pages-using-pelican.html">Migrating to GitHub Pages using Pelican</a>.
-The process was very easy and motivated me to migrate from <a href="http://octopress.org/">Octopress</a>.</p>
-<p>The migration was really easy and this is what I did:</p>
-<ol>
-<li>I followed the <em><a href="http://docs.getpelican.com">Pelican</a> setup</em> instructions (I left the fabric part out).</li>
-<li>I moved my Markdown files from the previous blog and changed the metadata for the Pelican fields.</li>
-<li>Added a new section I never published with the previous blog.</li>
-<li>I made a couple of modifications to the <code>pelicanconf.py</code> file.</li>
-<li>Publish to Github.</li>
-</ol>
-<p>I had to spend some time on step #2 because I was basically editing out the metadata
-fields, but that is something that you can get done pretty easily once you master some
-keyboard shortcuts.</p>
-<p>The new section I wanted to put up is based and constructed using <a href="http://ipython.org/notebook.html">IPython notebooks</a>. A notebook
-can be exported as HTML and embedded into a blog. I added a couple of <code>meta</code> tags
-to the HTML head and Pelican accepted it, no questions asked.</p>
-<p>At this point I was really happy with the outcome and was ready to push the new
-blog to Github, when I noticed something.</p>
-<p>In the previous blog, the routes where:</p>
-<div class="highlight"><pre><span class="nl">http:</span><span class="c1">//sergiobuj.github.io/blog/YEAR/MONTH/DAY/POST-TITLE/</span>
-</pre></div>
-
-
-<p>And now I had</p>
-<div class="highlight"><pre><span class="nl">http:</span><span class="c1">//localhost:8888/POST-TITLE/</span>
-</pre></div>
-
-
-<p>In my case this is not very important because of the traffic, but there is a
-fundamental idea about those resources 'posts' that I would be breaking if I had
-let this happen.</p>
-<p>Imagine someone bookmarked one of your blog posts that they really liked and want
-to come back and read it again. It won't matter how much you payed a designed for
-a beautiful 404 page, a 404 page is frustrating for an user.</p>
-<p>It might not be my case, but I want consistency. And this turned out to be a very
-easy fix in Pelican. I added the following to the <code>pelicanconf.py</code> file:</p>
-<div class="highlight"><pre><span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="err">&#39;</span><span class="p">{</span><span class="n">category</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">Y</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">m</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">d</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">slug</span><span class="p">}</span><span class="o">/</span><span class="err">&#39;</span>
-<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="err">&#39;</span><span class="p">{</span><span class="n">category</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">Y</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">m</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">d</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">slug</span><span class="p">}</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">html</span><span class="err">&#39;</span>
-<span class="n">SLUGIFY_SOURCE</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span>
-</pre></div>
-
-
-<p>These options, and many more, are explained in the <a href="http://docs.getpelican.com/en/3.4.0/settings.html#url-settings">Pelican settings</a>.</p>
-<p>Last step was getting the generated files to the Github page. In the version of
-Pelican I used, a Github pages support is already available, but before <code>make github</code>
-can work I had to create the git project and add the remote.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://sergiobuj.github.io/coding-exercises/2014/07/27/coding-exercises/" rel="bookmark"
-                           title="Permalink to Coding exercises">Coding exercises</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-07-27T10:40:00">
-                Published: Sun 27 July 2014
+		<br />
+        <abbr class="modified" title="2014-08-11T16:06:00">
+                Updated: Mon 11 August 2014
         </abbr>
 
         <address class="vcard author">
@@ -112,7 +38,7 @@ can work I had to create the git project and add the remote.</p>                
         </address>
 <p>In <a href="http://sergiobuj.github.io/category/coding-exercises.html">Coding exercises</a>. </p>
 <p>tags: <a href="http://sergiobuj.github.io/tag/code.html">Code</a> <a href="http://sergiobuj.github.io/tag/rosalind.html">Rosalind</a> <a href="http://sergiobuj.github.io/tag/algorithms.html">Algorithms</a> <a href="http://sergiobuj.github.io/tag/ipython-notebook.html">IPython notebook</a> </p>
-</footer><!-- /.post-info -->                
+</footer><!-- /.post-info -->
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
@@ -132,8 +58,140 @@ can work I had to create the git project and add the remote.</p>                
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Working on the programming problems from <a href="https://rosalind.org">Rosalind</a> I decided to present some of the algorithms I used to solve some of them.</p>
-<p>I will try to present the algorithm/code as a way to solve a general problem and not the actual problem because I don't want to ...</p></div></div></div></div></div>
-                <a class="readmore" href="http://sergiobuj.github.io/coding-exercises/2014/07/27/coding-exercises/">read more</a>
+<p>I will try to present the algorithm/code as a way to solve a general problem and not the actual problem because I don't want to spoil the fun for others.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Graphs">Graphs<a class="anchor-link" href="#Graphs">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="c"># For all the following graph algorithms I will use the dictionary with integers as keys and sets as values.</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">:</span><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">]),</span>
+    <span class="mi">1</span><span class="p">:</span><span class="nb">set</span><span class="p">([</span><span class="mi">2</span><span class="p">]),</span>
+    <span class="mi">2</span><span class="p">:</span><span class="nb">set</span><span class="p">([])</span>
+<span class="p">}</span>
+
+<span class="c">#This Graph is just:</span>
+<span class="c"># 0 -&gt; 1 -&gt; 2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I will also try to use <a href="http://networkx.github.io/">Networkx</a> to give a visual representation.</p>
+<ul>
+<li><a href="/coding-exercises/2014/07/27/using-tarjans-algorithm/">Strongly Connected Components in a graph</a></li>
+<li><a href="/coding-exercises/2014/08/11/reach-all-vertices">Finding a node that can reach all graph</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Comments? let me know on <a href="https://twitter.com/sergiobuj">@sergiobuj</a></p>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sergiobuj.github.io/coding-exercises/2014/08/11/reach-all-vertices/" rel="bookmark"
+                           title="Permalink to Reach all vertices">Reach all vertices</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-08-11T16:05:00">
+                Published: Mon 11 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://sergiobuj.github.io/author/sergio-botero.html">Sergio Botero</a>
+        </address>
+<p>In <a href="http://sergiobuj.github.io/category/coding-exercises.html">Coding exercises</a>. </p>
+<p>tags: <a href="http://sergiobuj.github.io/tag/code.html">Code</a> <a href="http://sergiobuj.github.io/tag/rosalind.html">Rosalind</a> <a href="http://sergiobuj.github.io/tag/algorithms.html">Algorithms</a> <a href="http://sergiobuj.github.io/tag/ipython-notebook.html">IPython notebook</a> <a href="http://sergiobuj.github.io/tag/tarjan.html">Tarjan</a> <a href="http://sergiobuj.github.io/tag/strongly-connected-components.html">Strongly Connected Components</a> </p>
+</footer><!-- /.post-info -->                
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Can-I-reach-all-vertices-from-one-vertex?">Can I reach all vertices from one vertex?<a class="anchor-link" href="#Can-I-reach-all-vertices-from-one-vertex?">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In another programming challenge from <a href="https://rosalind.org">Rosalind</a> I was asked to find a vertex, if any, from which all other vertices are reachable. In a DAG.</p>
+<p>The very first solution that comes to mind is to simply go through the list of edges ...</p></div></div></div></div></div>
+                <a class="readmore" href="http://sergiobuj.github.io/coding-exercises/2014/08/11/reach-all-vertices/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sergiobuj.github.io/blog/2014/08/10/from-octopress-to-pelican/" rel="bookmark"
+                           title="Permalink to From Octopress to Pelican">From Octopress to Pelican</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-08-10T22:38:00">
+                Published: Sun 10 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://sergiobuj.github.io/author/sergio-botero.html">Sergio Botero</a>
+        </address>
+<p>In <a href="http://sergiobuj.github.io/category/blog.html">blog</a>. </p>
+<p>tags: <a href="http://sergiobuj.github.io/tag/blog.html">blog</a> <a href="http://sergiobuj.github.io/tag/octopress.html">octopress</a> <a href="http://sergiobuj.github.io/tag/pelican.html">pelican</a> </p>
+</footer><!-- /.post-info -->                <p>If I want to blog about something the last thing I need is the blogging
+framework getting in the way.</p>
+<p>I don't blog much, but every time I wanted to write something I had to
+basically relearn everything about my previous 'blog framework' to get
+that working.</p>
+<p>I was ...</p>
+                <a class="readmore" href="http://sergiobuj.github.io/blog/2014/08/10/from-octopress-to-pelican/">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
@@ -317,28 +375,6 @@ over a project, finish the new feature first and then improve the project."</p>
 </footer><!-- /.post-info -->                <p>Since October 2012 I have been visiting the <strong>CECI</strong> Lab at the <strong>MIT</strong> and contributing to a project to allow single sign-on between learning management systems (Moodle, Sakai, dotLRN, etc) and remote laboratories management systems.
 This will provide access to remote laboratories and other activities to students while they are ...</p>
                 <a class="readmore" href="http://sergiobuj.github.io/blog/2012/12/01/labmanager-for-learning-management-systems/">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://sergiobuj.github.io/blog/2012/11/20/rosalind-learning-bioinformatics/" rel="bookmark"
-                           title="Permalink to Rosalind: Learning Bioinformatics">Rosalind: Learning Bioinformatics</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-11-20T20:56:00">
-                Published: Tue 20 November 2012
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://sergiobuj.github.io/author/sergio-botero.html">Sergio Botero</a>
-        </address>
-<p>In <a href="http://sergiobuj.github.io/category/blog.html">blog</a>. </p>
-<p>tags: <a href="http://sergiobuj.github.io/tag/coding.html">coding</a> <a href="http://sergiobuj.github.io/tag/bioinformatics.html">Bioinformatics</a> <a href="http://sergiobuj.github.io/tag/python.html">python</a> <a href="http://sergiobuj.github.io/tag/learning.html">learning</a> </p>
-</footer><!-- /.post-info -->                <p><a href="http://rosalind.info">Rosalind.info</a> is a great project to learn Bioinformatics by solving programming challenges. The system is similar to the one you would find in the <a href="http://code.google.com/codejam">Google Code Jam</a> in which you are given a problem and a sample input and output. When you think you have solved the problem, you ...</p>
-                <a class="readmore" href="http://sergiobuj.github.io/blog/2012/11/20/rosalind-learning-bioinformatics/">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
