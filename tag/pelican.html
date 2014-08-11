@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Sergio:Botero - pelican</title>
+        <link rel="stylesheet" href="http://sergiobuj.github.io/theme/css/main.css" />
+        <link href="http://sergiobuj.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sergio:Botero Atom Feed" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://sergiobuj.github.io/">Sergio:Botero </a></h1>
+                <nav><ul>
+                    <li><a href="http://sergiobuj.github.io/category/blog.html">blog</a></li>
+                    <li><a href="http://sergiobuj.github.io/category/coding-exercises.html">Coding exercises</a></li>
+                    <li><a href="http://sergiobuj.github.io/category/learn-by-cloning.html">Learn by Cloning</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://sergiobuj.github.io/blog/2014/08/10/from-octopress-to-pelican/">From Octopress to Pelican</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-08-10T22:38:00">
+                Published: Sun 10 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://sergiobuj.github.io/author/sergio-botero.html">Sergio Botero</a>
+        </address>
+<p>In <a href="http://sergiobuj.github.io/category/blog.html">blog</a>. </p>
+<p>tags: <a href="http://sergiobuj.github.io/tag/blog.html">blog</a> <a href="http://sergiobuj.github.io/tag/octopress.html">octopress</a> <a href="http://sergiobuj.github.io/tag/pelican.html">pelican</a> </p>
+</footer><!-- /.post-info --><p>If I want to blog about something the last thing I need is the blogging
+framework getting in the way.</p>
+<p>I don't blog much, but every time I wanted to write something I had to
+basically relearn everything about my previous 'blog framework' to get
+that working.</p>
+<p>I was spending way too much time on 'not writing', making me delaying any
+idea I wanted to put up. I considered moving to <a href="http://www.tumblr.com/">tumblr</a> or something like
+it, but that was being too radical about it (also I like to feel at least
+some ownership on the process).</p>
+<p>Recently I came across a blog post from <a href="http://mathamy.com/">Amy Hanlon</a> about <a href="http://mathamy.com/migrating-to-github-pages-using-pelican.html">Migrating to GitHub Pages using Pelican</a>.
+The process was very easy and motivated me to migrate from <a href="http://octopress.org/">Octopress</a>.</p>
+<p>The migration was really easy and this is what I did:</p>
+<ol>
+<li>I followed the <em><a href="http://docs.getpelican.com">Pelican</a> setup</em> instructions (I left the fabric part out).</li>
+<li>I moved my Markdown files from the previous blog and changed the metadata for the Pelican fields.</li>
+<li>Added a new section I never published with the previous blog.</li>
+<li>I made a couple of modifications to the <code>pelicanconf.py</code> file.</li>
+<li>Publish to Github.</li>
+</ol>
+<p>I had to spend some time on step #2 because I was basically editing out the metadata
+fields, but that is something that you can get done pretty easily once you master some
+keyboard shortcuts.</p>
+<p>The new section I wanted to put up is based and constructed using <a href="http://ipython.org/notebook.html">IPython notebooks</a>. A notebook
+can be exported as HTML and embedded into a blog. I added a couple of <code>meta</code> tags
+to the HTML head and Pelican accepted it, no questions asked.</p>
+<p>At this point I was really happy with the outcome and was ready to push the new
+blog to Github, when I noticed something.</p>
+<p>In the previous blog, the routes where:</p>
+<div class="highlight"><pre><span class="nl">http:</span><span class="c1">//sergiobuj.github.io/blog/YEAR/MONTH/DAY/POST-TITLE/</span>
+</pre></div>
+
+
+<p>And now I had</p>
+<div class="highlight"><pre><span class="nl">http:</span><span class="c1">//localhost:8888/POST-TITLE/</span>
+</pre></div>
+
+
+<p>In my case this is not very important because of the traffic, but there is a
+fundamental idea about those resources 'posts' that I would be breaking if I had
+let this happen.</p>
+<p>Imagine someone bookmarked one of your blog posts that they really liked and want
+to come back and read it again. It won't matter how much you payed a designed for
+a beautiful 404 page, a 404 page is frustrating for an user.</p>
+<p>It might not be my case, but I want consistency. And this turned out to be a very
+easy fix in Pelican. I added the following to the <code>pelicanconf.py</code> file:</p>
+<div class="highlight"><pre><span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="err">&#39;</span><span class="p">{</span><span class="n">category</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">Y</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">m</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">d</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">slug</span><span class="p">}</span><span class="o">/</span><span class="err">&#39;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="err">&#39;</span><span class="p">{</span><span class="n">category</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">Y</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">m</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">d</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">slug</span><span class="p">}</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">html</span><span class="err">&#39;</span>
+<span class="n">SLUGIFY_SOURCE</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<p>These options, and many more, are explained in the <a href="http://docs.getpelican.com/en/3.4.0/settings.html#url-settings">Pelican settings</a>.</p>
+<p>Last step was getting the generated files to the Github page. In the version of
+Pelican I used, a Github pages support is already available, but before <code>make github</code>
+can work I had to create the git project and add the remote.</p>                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://sergiobuj.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://github.com/sergiobuj">Github/sergiobuj</a></li>
+                            <li><a href="https://twitter.com/sergiobuj">Twitter/sergiobuj</a></li>
+                            <li><a href="https://www.linkedin.com/in/boterosergio">LinkedIn/boterosergio</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25593577-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>

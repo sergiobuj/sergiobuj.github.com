@@ -23,7 +23,85 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://sergiobuj.github.io/blog/2013/04/08/small-victories/">Small Victories</a></h1>
+                    <h1 class="entry-title"><a href="http://sergiobuj.github.io/blog/2014/08/10/from-octopress-to-pelican/">From Octopress to Pelican</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-08-10T22:38:00">
+                Published: Sun 10 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://sergiobuj.github.io/author/sergio-botero.html">Sergio Botero</a>
+        </address>
+<p>In <a href="http://sergiobuj.github.io/category/blog.html">blog</a>. </p>
+<p>tags: <a href="http://sergiobuj.github.io/tag/blog.html">blog</a> <a href="http://sergiobuj.github.io/tag/octopress.html">octopress</a> <a href="http://sergiobuj.github.io/tag/pelican.html">pelican</a> </p>
+</footer><!-- /.post-info --><p>If I want to blog about something the last thing I need is the blogging
+framework getting in the way.</p>
+<p>I don't blog much, but every time I wanted to write something I had to
+basically relearn everything about my previous 'blog framework' to get
+that working.</p>
+<p>I was spending way too much time on 'not writing', making me delaying any
+idea I wanted to put up. I considered moving to <a href="http://www.tumblr.com/">tumblr</a> or something like
+it, but that was being too radical about it (also I like to feel at least
+some ownership on the process).</p>
+<p>Recently I came across a blog post from <a href="http://mathamy.com/">Amy Hanlon</a> about <a href="http://mathamy.com/migrating-to-github-pages-using-pelican.html">Migrating to GitHub Pages using Pelican</a>.
+The process was very easy and motivated me to migrate from <a href="http://octopress.org/">Octopress</a>.</p>
+<p>The migration was really easy and this is what I did:</p>
+<ol>
+<li>I followed the <em><a href="http://docs.getpelican.com">Pelican</a> setup</em> instructions (I left the fabric part out).</li>
+<li>I moved my Markdown files from the previous blog and changed the metadata for the Pelican fields.</li>
+<li>Added a new section I never published with the previous blog.</li>
+<li>I made a couple of modifications to the <code>pelicanconf.py</code> file.</li>
+<li>Publish to Github.</li>
+</ol>
+<p>I had to spend some time on step #2 because I was basically editing out the metadata
+fields, but that is something that you can get done pretty easily once you master some
+keyboard shortcuts.</p>
+<p>The new section I wanted to put up is based and constructed using <a href="http://ipython.org/notebook.html">IPython notebooks</a>. A notebook
+can be exported as HTML and embedded into a blog. I added a couple of <code>meta</code> tags
+to the HTML head and Pelican accepted it, no questions asked.</p>
+<p>At this point I was really happy with the outcome and was ready to push the new
+blog to Github, when I noticed something.</p>
+<p>In the previous blog, the routes where:</p>
+<div class="highlight"><pre><span class="nl">http:</span><span class="c1">//sergiobuj.github.io/blog/YEAR/MONTH/DAY/POST-TITLE/</span>
+</pre></div>
+
+
+<p>And now I had</p>
+<div class="highlight"><pre><span class="nl">http:</span><span class="c1">//localhost:8888/POST-TITLE/</span>
+</pre></div>
+
+
+<p>In my case this is not very important because of the traffic, but there is a
+fundamental idea about those resources 'posts' that I would be breaking if I had
+let this happen.</p>
+<p>Imagine someone bookmarked one of your blog posts that they really liked and want
+to come back and read it again. It won't matter how much you payed a designed for
+a beautiful 404 page, a 404 page is frustrating for an user.</p>
+<p>It might not be my case, but I want consistency. And this turned out to be a very
+easy fix in Pelican. I added the following to the <code>pelicanconf.py</code> file:</p>
+<div class="highlight"><pre><span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="err">&#39;</span><span class="p">{</span><span class="n">category</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">Y</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">m</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">d</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">slug</span><span class="p">}</span><span class="o">/</span><span class="err">&#39;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="err">&#39;</span><span class="p">{</span><span class="n">category</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">Y</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">m</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">date</span><span class="o">:%</span><span class="n">d</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">slug</span><span class="p">}</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">html</span><span class="err">&#39;</span>
+<span class="n">SLUGIFY_SOURCE</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<p>These options, and many more, are explained in the <a href="http://docs.getpelican.com/en/3.4.0/settings.html#url-settings">Pelican settings</a>.</p>
+<p>Last step was getting the generated files to the Github page. In the version of
+Pelican I used, a Github pages support is already available, but before <code>make github</code>
+can work I had to create the git project and add the remote.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sergiobuj.github.io/blog/2013/04/08/small-victories/" rel="bookmark"
+                           title="Permalink to Small Victories">Small Victories</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2013-04-08T21:58:00">
                 Published: Mon 08 April 2013
@@ -34,13 +112,11 @@
         </address>
 <p>In <a href="http://sergiobuj.github.io/category/blog.html">blog</a>. </p>
 <p>tags: <a href="http://sergiobuj.github.io/tag/optimizations.html">Optimizations</a> <a href="http://sergiobuj.github.io/tag/python.html">Python</a> <a href="http://sergiobuj.github.io/tag/clusterpy.html">ClusterPy</a> <a href="http://sergiobuj.github.io/tag/rise.html">RiSE</a> </p>
-</footer><!-- /.post-info --><p>Lately I have been working in optimizing and parallelizing the ClusterPy library and at the moment, I can celebrate some 'Small Victories'.</p>
-<p>So far I have been making small changes in places that have huge impact -functions that get called a lot and unnecessary function calling- and the timer now stops a bit earlier.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>Lately I have been working in optimizing and parallelizing the ClusterPy library and at the moment, I can celebrate some 'Small Victories'.</p>
+<p>So far I have been making small changes in places that have huge impact -functions that get called a lot and unnecessary function calling- and the timer now ...</p>
+                <a class="readmore" href="http://sergiobuj.github.io/blog/2013/04/08/small-victories/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sergio:Botero</title><link>http://sergiobuj.github.io/</link><description></description><atom:link href="http://sergiobuj.github.io/feeds/sergio-botero.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 27 Jul 2014 10:40:00 -0700</lastBuildDate><item><title>Coding exercises</title><link>http://sergiobuj.github.io/coding-exercises/2014/07/27/coding-exercises/</link><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sergio:Botero</title><link>http://sergiobuj.github.io/</link><description></description><atom:link href="http://sergiobuj.github.io/feeds/sergio-botero.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 10 Aug 2014 22:38:00 -0700</lastBuildDate><item><title>From Octopress to Pelican</title><link>http://sergiobuj.github.io/blog/2014/08/10/from-octopress-to-pelican/</link><description>&lt;p&gt;If I want to blog about something the last thing I need is the blogging
+framework getting in the way.&lt;/p&gt;
+&lt;p&gt;I don't blog much, but every time I wanted to write something I had to
+basically relearn everything about my previous 'blog framework' to get
+that working.&lt;/p&gt;
+&lt;p&gt;I was spending way too much time on 'not writing', making me delaying any
+idea I wanted to put up. I considered moving to &lt;a href="http://www.tumblr.com/"&gt;tumblr&lt;/a&gt; or something like
+it, but that was being too radical about it (also I like to feel at least
+some ownership on the process).&lt;/p&gt;
+&lt;p&gt;Recently I came across a blog post from &lt;a href="http://mathamy.com/"&gt;Amy Hanlon&lt;/a&gt; about &lt;a href="http://mathamy.com/migrating-to-github-pages-using-pelican.html"&gt;Migrating to GitHub Pages using Pelican&lt;/a&gt;.
+The process was very easy and motivated me to migrate from &lt;a href="http://octopress.org/"&gt;Octopress&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The migration was really easy and this is what I did:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I followed the &lt;em&gt;&lt;a href="http://docs.getpelican.com"&gt;Pelican&lt;/a&gt; setup&lt;/em&gt; instructions (I left the fabric part out).&lt;/li&gt;
+&lt;li&gt;I moved my Markdown files from the previous blog and changed the metadata for the Pelican fields.&lt;/li&gt;
+&lt;li&gt;Added a new section I never published with the previous blog.&lt;/li&gt;
+&lt;li&gt;I made a couple of modifications to the &lt;code&gt;pelicanconf.py&lt;/code&gt; file.&lt;/li&gt;
+&lt;li&gt;Publish to Github.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I had to spend some time on step #2 because I was basically editing out the metadata
+fields, but that is something that you can get done pretty easily once you master some
+keyboard shortcuts.&lt;/p&gt;
+&lt;p&gt;The new section I wanted to put up is based and constructed using &lt;a href="http://ipython.org/notebook.html"&gt;IPython notebooks&lt;/a&gt;. A notebook
+can be exported as HTML and embedded into a blog. I added a couple of &lt;code&gt;meta&lt;/code&gt; tags
+to the HTML head and Pelican accepted it, no questions asked.&lt;/p&gt;
+&lt;p&gt;At this point I was really happy with the outcome and was ready to push the new
+blog to Github, when I noticed something.&lt;/p&gt;
+&lt;p&gt;In the previous blog, the routes where:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nl"&gt;http:&lt;/span&gt;&lt;span class="c1"&gt;//sergiobuj.github.io/blog/YEAR/MONTH/DAY/POST-TITLE/&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And now I had&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nl"&gt;http:&lt;/span&gt;&lt;span class="c1"&gt;//localhost:8888/POST-TITLE/&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In my case this is not very important because of the traffic, but there is a
+fundamental idea about those resources 'posts' that I would be breaking if I had
+let this happen.&lt;/p&gt;
+&lt;p&gt;Imagine someone bookmarked one of your blog posts that they really liked and want
+to come back and read it again. It won't matter how much you payed a designed for
+a beautiful 404 page, a 404 page is frustrating for an user.&lt;/p&gt;
+&lt;p&gt;It might not be my case, but I want consistency. And this turned out to be a very
+easy fix in Pelican. I added the following to the &lt;code&gt;pelicanconf.py&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;:%&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;:%&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;:%&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;slug&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;:%&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;:%&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;:%&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;slug&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;SLUGIFY_SOURCE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;These options, and many more, are explained in the &lt;a href="http://docs.getpelican.com/en/3.4.0/settings.html#url-settings"&gt;Pelican settings&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Last step was getting the generated files to the Github page. In the version of
+Pelican I used, a Github pages support is already available, but before &lt;code&gt;make github&lt;/code&gt;
+can work I had to create the git project and add the remote.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sergio Botero</dc:creator><pubDate>Sun, 10 Aug 2014 22:38:00 -0700</pubDate><guid>tag:sergiobuj.github.io,2014-08-10:blog/2014/08/10/from-octopress-to-pelican/</guid><category>blog</category><category>octopress</category><category>pelican</category></item><item><title>Coding exercises</title><link>http://sergiobuj.github.io/coding-exercises/2014/07/27/coding-exercises/</link><description>
   &lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
